@@ -1,0 +1,57 @@
+.main {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-height: 100svh;
+    width: 100%;
+    margin-top: 6rem;
+}
+
+.site-section {
+    position: relative;
+    margin-top: 5rem;
+    padding: 5rem;
+    font-size: 2rem;
+    color: var(--color-purple);
+    min-height: 40vh;
+    width: 100%;
+    grid-column: 1/-1;
+    background-color: white;
+    line-height: 1.5;
+    border-radius: 10% 14% 7% 4% / 6% 6% 4% 17%;
+    transition: all 1s ease-in;
+}
+
+.site-section--about::after {
+    background-color: var(--color-orange);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: -1rem;
+    width: 3rem;
+    height: 18rem;
+}
+
+.site-section--projects::after {
+    background-color: var(--color-purple);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: -1rem;
+    width: 3rem;
+    height: 18rem;
+}
+
+.site-section--contact::after {
+    background-color: var(--color-yellow);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: -1rem;
+    width: 3rem;
+    height: 18rem;
+}

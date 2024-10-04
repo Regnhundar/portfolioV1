@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "BrandonGrotesque";
+  src: url("assets/fonts/brandon-grotesque-black-58a8a3e824392.otf");
+}
+
+
+:root {
+  --text-size-s: .85rem;
+  --text-size-m: 1rem;
+  --text-size-l: 1.3rem;
+  --text-size-xl: 2rem;
+  --text-size-xxl: 3rem;
+
+  --text-font--header: 'BrandonGrotesque', sans-serif;
+  --text-font--bread: arial;
+
+  --background-gradient: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);
+  --color-white: white;
+  --color-black: #444444;
+  --color-yellow: #FCD01D;
+  --color-orange: #FF4500;
+  --color-purple: #3B3355;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  /* outline: 1px solid red; */
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+}
+
+::selection {
+  color: black;
+  background: var(--color-orange);
+}
+
+::-moz-selection {
+  color: black;
+  background: var(--color-orange);
+}
+
+body {
+  background-image: var(--background-gradient);
+  min-height: 100svh;
+  font-family: var(--text-font--bread);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+
+  font-family: var(--text-font--header);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  font-style: italic;
+  pointer-events: none;
+}

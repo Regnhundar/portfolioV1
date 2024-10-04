@@ -1,0 +1,15 @@
+.page-navigation {
+    display: grid;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+.page-navigation__navigation-list {
+    justify-self: end;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 40rem;
+    backdrop-filter: blur(10rem);
+}

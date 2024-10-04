@@ -1,0 +1,140 @@
+.header {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-height: 50rem;
+    margin-bottom: 5rem;
+}
+
+.header__title {
+    grid-column: 1/-1;
+    font-size: 15rem;
+    color: var(--color-black);
+    display: grid;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    .header__title--top {
+        position: relative;
+    }
+
+    .header__title--top::after {
+        color: transparent;
+        position: absolute;
+        content: "";
+        width: 110%;
+        bottom: 6rem;
+        left: -4rem;
+        transform: skewX(20deg);
+        height: 5rem;
+        z-index: -1;
+        background: #fcd01d;
+    }
+
+    .header__title--bottom {
+        position: relative;
+        grid-column: span 2;
+    }
+
+    .header__title--bottom::after {
+        position: absolute;
+        content: "";
+        width: 50%;
+        bottom: 6rem;
+        left: -1rem;
+        height: 8px;
+        transform: skewX(20deg);
+        background: #fcd01d;
+        height: 5rem;
+        z-index: -1;
+    }
+}
+
+.header__blob-container {
+    inset: 0;
+    grid-column: 3/4;
+    top: 23rem;
+    z-index: 2;
+    position: absolute;
+
+
+    .header__image {
+        z-index: 10;
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        border-radius: 0 0 20% 20%;
+    }
+}
+
+.header__blob-container::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    aspect-ratio: 1;
+    width: 400px;
+    background-color: white;
+    border-radius: 40% 50% 53% 47% / 36% 46% 54% 54%;
+    animation: wobble 30s linear infinite;
+}
+
+@keyframes wobble {
+
+    0% {
+        border-radius: 40% 50% 53% 47% / 36% 46% 54% 54%;
+    }
+
+    10% {
+        border-radius: 35% 60% 50% 60% / 45% 60% 36% 72%;
+    }
+
+
+    20% {
+        border-radius: 47% 53% 67% 53% / 37% 38% 42% 63%;
+    }
+
+
+    30% {
+        border-radius: 69% 61% 77% 63% / 43% 62% 61% 68%;
+    }
+
+
+    40% {
+        border-radius: 77% 71% 82% 79% / 64% 70% 60% 76%;
+    }
+
+
+    50% {
+        border-radius: 57% 61% 72% 89% / 54% 76% 72% 76%;
+
+    }
+
+
+    60% {
+        border-radius: 82% 70% 78% 77% / 72% 65% 81% 66%;
+    }
+
+
+    70% {
+        border-radius: 74% 61% 53% 81% / 56% 62% 68% 74%;
+    }
+
+
+    80% {
+        border-radius: 52% 50% 56% 47% / 46% 69% 41% 59%;
+    }
+
+
+    90% {
+        border-radius: 47% 60% 42% 51% / 35% 71% 37% 66%;
+
+    }
+
+    100% {
+        border-radius: 40% 50% 53% 47% / 36% 46% 54% 54%;
+        transform: rotatez(360deg);
+
+    }
+}

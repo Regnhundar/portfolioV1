@@ -8,19 +8,23 @@
   --text-size-s: .85rem;
   --text-size-m: 1rem;
   --text-size-l: 1.3rem;
-  --text-size-xl: 2rem;
-  --text-size-xxl: 3rem;
+  --text-size-xl: 1.6rem;
+  --text-size-xxl: 2rem;
+  --text-size-xxxl: 3rem;
 
   --text-font--header: 'BrandonGrotesque', sans-serif;
   --text-font--bread: arial;
 
   --background-gradient: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);
+  --background-gradient: linear-gradient(-225deg, #9efbf6 0%, #57E9F2 48%, #45D4FB 100%);
   --color-white: white;
-  --color-black: #444444;
+  --color-black: #444;
   --color-yellow: #FCD01D;
   --color-orange: #FF4500;
   --color-purple: #3B3355;
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -32,7 +36,7 @@
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -41,12 +45,12 @@
 
 ::selection {
   color: black;
-  background: var(--color-orange);
+  background: var(--color-yellow);
 }
 
 ::-moz-selection {
   color: black;
-  background: var(--color-orange);
+  background: var(--color-yellow);
 }
 
 body {
@@ -73,5 +77,17 @@ ul {
 
 img {
   font-style: italic;
+  user-select: none;
   pointer-events: none;
+}
+
+@media screen and (max-width: 1500px) {
+  html {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    max-width: 1000px;
+  }
+
 }

@@ -1,0 +1,64 @@
+.card-wrapper {
+    position: relative;
+    padding: 5rem 3rem 5rem 3rem;
+    color: var(--color-purple);
+    min-height: 30rem;
+    width: 100%;
+    grid-column: 1/-1;
+    background-color: white;
+    line-height: 1.5;
+    border-radius: 10% 14% 7% 4% / 6% 6% 4% 5%;
+    transition: all 1s ease-in;
+}
+
+.card-wrapper--about::after {
+    background-color: var(--color-orange);
+    content: "";
+    position: absolute;
+    top: 6rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}
+
+.card-wrapper--about ::selection {
+    color: black;
+    background: var(--color-orange);
+}
+
+.card-wrapper--about ::-moz-selection {
+    color: black;
+    background: var(--color-orange);
+}
+
+.card-wrapper--projects::after {
+    background-color: var(--color-purple);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 6rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}
+
+.card-wrapper--projects ::selection {
+    color: white;
+    background: var(--color-purple);
+}
+
+.card-wrapper--projects ::-moz-selection {
+    color: white;
+    background: var(--color-purple);
+}
+
+.card-wrapper--contact::after {
+    background-color: var(--color-yellow);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 6rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}

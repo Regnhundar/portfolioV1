@@ -1,5 +1,5 @@
 .navigation-link {
-    font-family: var(--text-font--header);
+    font-family: var(--text-font--title);
     font-size: var(--text-size-xl);
     padding: 1rem 2rem;
     color: var(--color-purple);

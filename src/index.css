@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @font-face {
   font-family: "BrandonGrotesque";
   src: url("assets/fonts/brandon-grotesque-black-58a8a3e824392.otf");
@@ -12,13 +14,14 @@
   --text-size-xxl: 2rem;
   --text-size-xxxl: 3rem;
 
-  --text-font--header: 'BrandonGrotesque', sans-serif;
-  --text-font--bread: arial;
+  --text-font--title: 'BrandonGrotesque', sans-serif;
+  --text-font--bread: 'Roboto', arial;
 
-  --background-gradient: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);
+
   --background-gradient: linear-gradient(-225deg, #9efbf6 0%, #57E9F2 48%, #45D4FB 100%);
   --color-white: white;
   --color-black: #444;
+  --color-transparent: rgba(0, 0, 0, 0.3);
   --color-yellow: #FCD01D;
   --color-orange: #FF4500;
   --color-purple: #3B3355;
@@ -57,7 +60,7 @@ body {
   background-image: var(--background-gradient);
   min-height: 100svh;
   font-family: var(--text-font--bread);
-
+  color: var(--color-purple);
 }
 
 h1,
@@ -66,9 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: white;
-
-  font-family: var(--text-font--header);
+  font-family: var(--text-font--title);
 }
 
 ul {
@@ -76,9 +77,10 @@ ul {
 }
 
 img {
+  text-align: center;
   font-style: italic;
   user-select: none;
-  pointer-events: none;
+
 }
 
 @media screen and (max-width: 1500px) {

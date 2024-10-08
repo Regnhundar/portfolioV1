@@ -2,9 +2,8 @@
 
 @font-face {
   font-family: "BrandonGrotesque";
-  src: url("assets/fonts/brandon-grotesque-black-58a8a3e824392.otf");
+  src: url("assets/fonts/brandon-grotesque-black-58a8a3e824392.otf") format("opentype");
 }
-
 
 :root {
   --text-size-s: .85rem;
@@ -83,7 +82,7 @@ img {
 
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1900px) {
   html {
     font-size: 12px;
   }

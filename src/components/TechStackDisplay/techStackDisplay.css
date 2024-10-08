@@ -1,0 +1,32 @@
+.site-section__skills-subtitle {
+    grid-column: 1/-1;
+    font-size: var(--text-size-xxl);
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.site-section__skills-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.site-section__skills-list-item {
+    font-weight: 400;
+    display: grid;
+    place-items: end center;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    transition: all .2s ease-in-out;
+}
+
+.site-section__skills-list-item:hover {
+    scale: 1.1;
+    color: var(--color-purple);
+    cursor: pointer;
+}
+
+.site-section__skill-icon {
+    aspect-ratio: 1;
+    width: 5rem;
+}

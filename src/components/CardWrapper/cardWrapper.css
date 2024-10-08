@@ -3,7 +3,7 @@
     grid-template-rows: auto;
     grid-auto-rows: 1fr;
     position: relative;
-    padding: 5rem 3rem;
+
     color: var(--color-purple);
     min-height: 30rem;
     width: 100%;
@@ -11,7 +11,18 @@
     background-color: white;
     line-height: 1.5;
     border-radius: 10% 14% 7% 4% / 6% 6% 4% 5%;
+}
 
+.card-wrapper--small {
+    padding: 2rem 1rem;
+}
+
+.card-wrapper--medium {
+    padding: 3rem 2rem;
+}
+
+.card-wrapper--big {
+    padding: 5rem 3rem;
 }
 
 .card-wrapper--about::after {

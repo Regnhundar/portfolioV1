@@ -1,0 +1,76 @@
+.site-section--projects {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.site-section__project-image {
+    grid-column: span 2;
+    place-self: center;
+    width: 100%;
+    object-fit: cover;
+    max-height: 14rem;
+    overflow-y: hidden;
+    object-position: top;
+    z-index: 20;
+}
+
+.site-section__project-image--clicked {
+    z-index: 20;
+    position: absolute;
+}
+
+.site-section__project-image:hover {
+    cursor: pointer;
+}
+
+/* Projekt kortet */
+.card-wrapper--projects:nth-of-type(1) {
+    padding-bottom: 6rem;
+    grid-template-columns: 1fr;
+}
+
+/* Projekt kortet */
+.site-section--projects> :nth-child(1) {
+    grid-column: span 5;
+    min-height: 0;
+}
+
+.card-wrapper--projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+}
+
+/* Shui */
+.site-section--projects> :nth-child(2) {
+    grid-row: 2/3;
+    grid-column: span 3;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+
+}
+
+.card-wrapper--projects .text-button {
+    align-self: end;
+}
+
+/* WhereItsAt */
+.site-section--projects> :nth-child(3) {
+    grid-row: 2/3;
+    grid-column: span 3;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+}
+
+/* RecollAction */
+.site-section--projects> :nth-child(4) {
+    grid-row: 2/3;
+    grid-column: span 3;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+}
+
+.site-section--projects> :nth-child(3) .site-section__project-image,
+.site-section--projects> :nth-child(4) .site-section__project-image {
+    max-width: 17rem;
+    align-self: start;
+}

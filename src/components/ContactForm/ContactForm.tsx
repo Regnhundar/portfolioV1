@@ -67,6 +67,7 @@ const ContactForm: React.FC = () => {
             </label>
             <label className="contact-form__label">
                 Ditt meddelande:
+                <span className="contact-form__wordcount">{`${message.length}/300`}</span>
                 <textarea
                     className="contact-form__message"
                     id="message"
@@ -75,8 +76,9 @@ const ContactForm: React.FC = () => {
                     minLength={30}
                     maxLength={300}
                     required></textarea>
-            </label>{" "}
-            {success && <p>Message sent successfully!</p>}
+            </label>
+
+            {success && <p className="">Message sent successfully!</p>}
             {error && <p>{error}</p>}
             <TextButton text="Skicka!" />
         </form>

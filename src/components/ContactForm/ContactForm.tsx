@@ -4,6 +4,7 @@ import TextButton from "../TextButton/TextButton";
 import emailjs from "@emailjs/browser";
 const serviceID = import.meta.env.VITE_SERVICE_ID;
 const userID = import.meta.env.VITE_USER_ID;
+const mailTemplate = import.meta.env.VITE_MAIL_TEMPLATE;
 
 const ContactForm: React.FC = () => {
     const [name, setName] = useState("");
@@ -22,7 +23,7 @@ const ContactForm: React.FC = () => {
         };
 
         emailjs
-            .send(serviceID, "contact_form", templateParams, userID)
+            .send(serviceID, mailTemplate, templateParams, userID)
             .then((response) => {
                 console.log("Email sent successfully!", response.status, response.text);
                 setSuccess(true);

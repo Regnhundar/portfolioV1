@@ -3,8 +3,8 @@
 <br>
 
 > [!NOTE]  
-> Bara en skissad idé än så länge. Jobbar på att slutföra!
+> Första iteration. En hel del kvar att göra. Ser definitivt bäst ut på desktop. Fortsättning följer...
 
 <br>
 
-**Det är kul med färg!**
+**Det är kul med färg! Animationer soon!**

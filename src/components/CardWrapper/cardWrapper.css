@@ -3,9 +3,7 @@
     grid-template-rows: auto;
     grid-auto-rows: 1fr;
     position: relative;
-
     color: var(--color-purple);
-    min-height: 30rem;
     width: 100%;
     grid-column: 1/-1;
     background-color: white;
@@ -25,6 +23,11 @@
     padding: 5rem 3rem;
 }
 
+.card-wrapper--inner {
+    display: grid;
+    grid-column: 1/-1;
+}
+
 .card-wrapper--about::after {
     background-color: var(--color-orange);
     content: "";
@@ -34,6 +37,8 @@
     width: 2.5rem;
     height: 10rem;
 }
+
+
 
 .card-wrapper--about ::selection {
     color: black;
@@ -45,16 +50,72 @@
     background: var(--color-orange);
 }
 
-.card-wrapper--projects::after {
+.card-wrapper--projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+}
+
+.card-wrapper--projects:first-of-type {
+    grid-template-rows: auto 1fr;
+}
+
+.card-wrapper--projects:first-of-type h2 {
+    margin-left: 0;
+}
+
+.card-wrapper--projects:first-of-type::after {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
     background-color: var(--color-purple);
     inset: 0;
     content: "";
     position: absolute;
-    top: 6rem;
+    top: 3rem;
     left: -1rem;
     width: 2.5rem;
     height: 10rem;
 }
+
+.card-wrapper--projects:nth-of-type(4)::after {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    background-color: var(--color-purple);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}
+
+.card-wrapper--projects:nth-of-type(3)::after {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    background-color: var(--color-purple);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}
+
+.card-wrapper--projects:nth-of-type(2)::after {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    background-color: var(--color-purple);
+    inset: 0;
+    content: "";
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 10rem;
+}
+
 
 .card-wrapper--projects ::selection {
     color: white;
@@ -66,6 +127,12 @@
     background: var(--color-purple);
 }
 
+#none::after {
+    opacity: 0;
+}
+
+
+
 .card-wrapper--contact::after {
     background-color: var(--color-yellow);
     inset: 0;
@@ -75,4 +142,76 @@
     left: -1rem;
     width: 2.5rem;
     height: 10rem;
+}
+
+@media screen and (max-width: 700px) {
+
+    .card-wrapper--small,
+    .card-wrapper--medium,
+    .card-wrapper--big {
+        padding: 4rem 2rem;
+    }
+
+    .card-wrapper--projects:first-of-type::after {
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+    .card-wrapper--projects:nth-of-type(4)::after {
+
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+    .card-wrapper--projects:nth-of-type(3)::after {
+
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+    .card-wrapper--projects:nth-of-type(2)::after {
+
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+    .card-wrapper--contact::after {
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+    .card-wrapper--about::after {
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 2rem;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .card-wrapper--small,
+    .card-wrapper--medium,
+    .card-wrapper--big {
+        padding: 4rem 1.5rem;
+    }
+
 }

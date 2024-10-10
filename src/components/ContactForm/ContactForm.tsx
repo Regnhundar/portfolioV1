@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <form className="contact-form" onSubmit={sendEmail}>
-            <h2 className="contact-form__title">Skicka ett meddelande:</h2>
+            <h2 className="contact-form__title site-section__title--subtitle">Skicka ett meddelande:</h2>
             <label className="contact-form__label">
                 Namn:
                 <input

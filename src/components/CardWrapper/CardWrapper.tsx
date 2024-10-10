@@ -6,11 +6,13 @@ interface Props {
     modifier?: string;
     size?: string;
     children: ReactNode;
+    id?: string;
 }
-const CardWrapper: React.FC<Props> = ({ html = "div", children, modifier, size = "big" }) => {
+const CardWrapper: React.FC<Props> = ({ html = "div", children, modifier, size = "big", id }) => {
     return React.createElement(
         html,
-        { className: `card-wrapper ${modifier ? `card-wrapper--${modifier}` : ""} ${size ? `card-wrapper--${size}` : ""}` },
+        { className: `card-wrapper ${modifier ? `card-wrapper--${modifier}` : ""} ${size ? `card-wrapper--${size}` : ""}`, id: id },
+
         children
     );
 };

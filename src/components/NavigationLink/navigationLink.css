@@ -15,10 +15,7 @@
     z-index: 1;
     transition: all .2s linear;
     height: 100%;
-
     --color: var(--color-black);
-
-
 }
 
 .navigation-link::after {
@@ -63,4 +60,17 @@
 
 .navigation-link--orange {
     --color: var(--color-orange);
+}
+
+@media screen and (max-width: 430px) {
+    .navigation-link {
+        padding: .5rem .6rem;
+        box-shadow: inset .5rem 0 0 0 var(--color);
+    }
+}
+
+@media screen and (max-width: 332px) {
+    .navigation-link {
+        font-size: var(--text-size-l);
+    }
 }

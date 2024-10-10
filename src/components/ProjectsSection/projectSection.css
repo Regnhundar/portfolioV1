@@ -1,5 +1,6 @@
 .site-section--projects {
     grid-template-columns: repeat(9, minmax(0, 1fr));
+    min-height: 60rem;
 }
 
 .site-section__project-image {
@@ -47,6 +48,7 @@
 .site-section--projects> :nth-child(2) {
     grid-row: 2/3;
     grid-column: span 3;
+
 }
 
 .card-wrapper--projects .text-button {
@@ -57,6 +59,7 @@
 .site-section--projects> :nth-child(3) {
     grid-row: 2/3;
     grid-column: span 3;
+    min-height: 36rem;
 }
 
 /* RecollAction */
@@ -74,9 +77,75 @@
 .site-section--projects> :nth-child(4) .site-section__project-image {
     max-width: 17rem;
     max-height: 100%;
-    align-self: center;
 }
 
 .site-section--projects> :nth-child(4) .site-section__title {
     padding-top: 2rem;
+}
+
+.site-section__text-wrapper {
+    grid-column: 1/-1;
+    min-height: 16.3rem;
+    display: block;
+    font-size: var(--text-size-l);
+}
+
+@media screen and (max-width: 900px) {
+    .site-section--projects {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .site-section--projects> :nth-child(1) {
+        grid-column: span 4;
+    }
+
+    /* Shui */
+    .site-section--projects> :nth-child(2) {
+        grid-column: span 4;
+        grid-row: 2/6;
+    }
+
+    /* WhereItsAt */
+    .site-section--projects> :nth-child(3) {
+        grid-column: span 2;
+        grid-row: 6/7;
+    }
+
+    /* RecollAction */
+    .site-section--projects> :nth-child(4) {
+        grid-row: 6/7;
+        grid-column: span 2;
+    }
+
+    .site-section__project-image {
+        grid-column: span 2;
+        place-self: center;
+        width: 100%;
+        object-fit: cover;
+        max-height: unset;
+        overflow-y: hidden;
+        object-position: top;
+        z-index: 20;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+    /* WhereItsAt */
+    .site-section--projects> :nth-child(3) {
+        grid-column: 1/-1;
+        grid-row: auto;
+
+    }
+
+    /* RecollAction */
+    .site-section--projects> :nth-child(4) {
+        grid-row: auto;
+        grid-column: 1/-1;
+    }
+
+    .site-section__project-image {
+        max-height: unset;
+
+    }
 }

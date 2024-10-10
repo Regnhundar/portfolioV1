@@ -1,6 +1,6 @@
 .site-section__skills-subtitle {
     grid-column: 1/-1;
-    font-size: var(--text-size-xxl);
+    font-size: var(--text-size-xl);
     align-self: center;
     margin-top: 1rem;
 }
@@ -21,12 +21,20 @@
 }
 
 .site-section__skills-list-item:hover {
-    scale: 1.1;
+    scale: 1.2;
     color: var(--color-purple);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .site-section__skill-icon {
     aspect-ratio: 1;
     width: 5rem;
+}
+
+@media screen and (max-width:400px) {
+    .site-section__skills-list {
+
+        gap: .5rem;
+
+    }
 }

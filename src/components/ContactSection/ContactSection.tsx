@@ -14,7 +14,7 @@ const ContactSection: React.FC = () => {
                 </div>
             </CardWrapper>
             <CardWrapper html="article" modifier="contact">
-                <h2 className="site-section__title">Länkar:</h2>
+                <h2 className="site-section__title site-section__title--subtitle">Länkar:</h2>
                 <nav className="site-section__navigation">
                     <ul className="site-section__social-list">
                         <li className="site-section__social-list-item">

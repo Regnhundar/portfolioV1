@@ -32,6 +32,7 @@ const ContactForm: React.FC = () => {
             .then((response) => {
                 console.log("Email sent successfully!", response.status, response.text);
                 setSuccess(true);
+                setError("");
                 setName("");
                 setEmail("");
                 setMessage("");
@@ -39,7 +40,7 @@ const ContactForm: React.FC = () => {
             })
             .catch((err) => {
                 console.error("Failed to send email:", err);
-                setError("Failed to send message. Please try again later.");
+                setError("Något gick fel. Bockade du i reCaptcha?");
             });
     };
 
@@ -84,7 +85,7 @@ const ContactForm: React.FC = () => {
                     maxLength={300}
                     required></textarea>
             </label>
-            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} size="compact" />
+            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} />
             {success && <p className="contact-form__feedback-message contact-form__feedback-message--green">Meddelandet skickat!</p>}
             {error && <p className="contact-form__feedback-message contact-form__feedback-message--red">{error}</p>}
             <TextButton text="Skicka!" />

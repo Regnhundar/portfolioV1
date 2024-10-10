@@ -25,16 +25,17 @@
     }
 
     .page-navigation {
-        padding-top: 1rem;
+        padding: 1rem .3rem 0 .3rem;
         backdrop-filter: blur(10rem);
         -webkit-backdrop-filter: blur(10rem);
     }
+
 
 }
 
 @media screen and (max-width: 430px) {
     .page-navigation__navigation-list {
-        gap: .5rem;
+        gap: .4rem;
         grid-template-columns: repeat(3, 1fr);
     }
 }

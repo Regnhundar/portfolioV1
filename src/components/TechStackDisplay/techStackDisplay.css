@@ -31,10 +31,18 @@
     width: 5rem;
 }
 
-@media screen and (max-width:400px) {
+
+@media screen and (max-width:500px) {
+
+    .site-section__skill-icon {
+        width: 4rem;
+    }
+
     .site-section__skills-list {
+        gap: 1rem .5rem;
+    }
 
-        gap: .5rem;
-
+    .site-section__skills-subtitle {
+        margin: 2rem 0;
     }
 }

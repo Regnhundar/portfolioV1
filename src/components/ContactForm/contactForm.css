@@ -67,17 +67,33 @@
 }
 
 .contact-form__feedback-message {
-    font-size: var(--text-size-m);
+    font-size: var(--text-size-l);
     font-weight: 600;
     align-self: center;
 }
 
 .contact-form__feedback-message--green {
     color: green;
+    animation: messageFade 6s forwards;
 }
 
 .contact-form__feedback-message--red {
     color: red;
+    animation: messageFade 6s forwards;
+}
+
+@keyframes messageFade {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @media screen and (max-width: 370px) {

@@ -42,9 +42,9 @@ const ProjectSection: React.FC = () => {
                         <div className="card-wrapper--inner">
                             <img
                                 onClick={(e) =>
-                                    handleClick("/assets/images/photos/ShuiLaptop.png", "The messageboard 'Shui' displayed on a laptop.", e)
+                                    handleClick("./assets/images/photos/ShuiLaptop.png", "The messageboard 'Shui' displayed on a laptop.", e)
                                 }
-                                src="/assets/images/photos/ShuiLaptop.png"
+                                src="./assets/images/photos/ShuiLaptop.png"
                                 alt="The messageboard 'Shui' displayed on a laptop."
                                 className="site-section__project-image"
                             />
@@ -72,9 +72,9 @@ const ProjectSection: React.FC = () => {
                         <div className="card-wrapper--inner">
                             <img
                                 onClick={(e) =>
-                                    handleClick("/assets/images/photos/whereItsAt.png", "The app 'where its at' displayed on an iPhone.", e)
+                                    handleClick("./assets/images/photos/whereItsAt.png", "The app 'where its at' displayed on an iPhone.", e)
                                 }
-                                src="/assets/images/photos/whereItsAt.png"
+                                src="./assets/images/photos/whereItsAt.png"
                                 alt="The app 'where its at' displayed on an iPhone."
                                 className="site-section__project-image"
                             />
@@ -100,9 +100,13 @@ const ProjectSection: React.FC = () => {
                         <div className="card-wrapper--inner">
                             <img
                                 onClick={(e) =>
-                                    handleClick("/assets/images/photos/recollActionOnPhone.png", "The game 'RecollAction' displayed on an iPhone.", e)
+                                    handleClick(
+                                        "./assets/images/photos/recollActionOnPhone.png",
+                                        "The game 'RecollAction' displayed on an iPhone.",
+                                        e
+                                    )
                                 }
-                                src="/assets/images/photos/recollActionOnPhone.png"
+                                src="./assets/images/photos/recollActionOnPhone.png"
                                 alt="The game 'RecollAction' displayed on an iPhone."
                                 className="site-section__project-image"
                             />

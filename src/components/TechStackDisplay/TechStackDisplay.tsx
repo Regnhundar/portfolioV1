@@ -6,7 +6,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/html.svg"
+                    src="./assets/images/icons/techstack/html.svg"
                     alt="An orange icon with a white 5 inside. Symbolizing html."
                 />
                 HTML
@@ -14,7 +14,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/css.svg"
+                    src="./assets/images/icons/techstack/css.svg"
                     alt="A blue icon with a white 3 inside. Symbolizing css."
                 />
                 CSS
@@ -22,7 +22,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/javascript.svg"
+                    src="./assets/images/icons/techstack/javascript.svg"
                     alt="A yellow icon with a black JS inside. Symbolizing javascript."
                 />
                 JavaScript
@@ -30,7 +30,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/typescript.svg"
+                    src="./assets/images/icons/techstack/typescript.svg"
                     alt="A blue icon with a white TS inside. Symbolizing typescript."
                 />
                 TypeScript
@@ -38,7 +38,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/react.svg"
+                    src="./assets/images/icons/techstack/react.svg"
                     alt="A blue icon. Several circles organized like an atom. Symbolizing react."
                 />
                 React
@@ -46,7 +46,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/node.svg"
+                    src="./assets/images/icons/techstack/node.svg"
                     alt="A green icon. An octagon with the letters js inside. Symbolizing node js."
                 />
                 Node.js
@@ -54,7 +54,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/aws.svg"
+                    src="./assets/images/icons/techstack/aws.svg"
                     alt="An orange arrow arcing beneath the letters aws. Symbolizing amazon web services."
                 />
                 AWS
@@ -62,7 +62,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/git.svg"
+                    src="./assets/images/icons/techstack/git.svg"
                     alt="An orange icon with a branching white line. Symbolizing git version control."
                 />
                 Git
@@ -70,7 +70,7 @@ const TechStackDisplay: React.FC = () => {
             <li className="site-section__skills-list-item">
                 <img
                     className="site-section__skill-icon"
-                    src="assets/images/icons/techstack/figma.svg"
+                    src="./assets/images/icons/techstack/figma.svg"
                     alt="A black icon with 5 colored shapes. Symbolizing figma design tool"
                 />
                 Figma

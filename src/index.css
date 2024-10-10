@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @font-face {
-  font-family: "BrandonGrotesque";
-  src: url("assets/fonts/brandon-grotesque-black-58a8a3e824392.otf");
+  font-family: "BrandonGrotesqueBlack";
+  src: url("/assets/fonts/brandonGrotesqueBlack.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "BrandonGrotesqueBold";
+  src: url("/assets/fonts/brandonGrotesqueBold.otf") format("opentype");
+}
 
 :root {
   --text-size-s: .85rem;
   --text-size-m: 1rem;
   --text-size-l: 1.3rem;
-  --text-size-xl: 1.6rem;
-  --text-size-xxl: 2rem;
+  --text-size-xl: 1.8rem;
+  --text-size-xxl: 2.4rem;
   --text-size-xxxl: 3rem;
 
-  --text-font--title: 'BrandonGrotesque', sans-serif;
+  --text-font--title: 'BrandonGrotesqueBlack', sans-serif;
   --text-font--bread: 'Roboto', arial;
 
+  --max-width: 1400px;
 
   --background-gradient: linear-gradient(-225deg, #9efbf6 0%, #57E9F2 48%, #45D4FB 100%);
   --color-white: white;
@@ -34,15 +39,14 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
+
   /* outline: 1px solid red; */
 }
 
 .wrapper {
-  max-width: 1300px;
+  max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
   display: grid;
 }
 
@@ -80,7 +84,36 @@ img {
   text-align: center;
   font-style: italic;
   user-select: none;
+}
 
+@media screen and (max-width: 2100px) {
+  html {
+    font-size: 15px;
+  }
+
+  :root {
+    --max-width: 1300px;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  html {
+    font-size: 14px;
+  }
+
+  :root {
+    --max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  html {
+    font-size: 13px;
+  }
+
+  :root {
+    --max-width: 1100px;
+  }
 }
 
 @media screen and (max-width: 1500px) {
@@ -88,8 +121,19 @@ img {
     font-size: 12px;
   }
 
-  .wrapper {
-    max-width: 1000px;
+  :root {
+    --max-width: 1000px;
   }
+}
 
+@media screen and (max-width: 500px) {
+  :root {
+    --text-font--title: 'BrandonGrotesqueBold', sans-serif;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    max-width: 100%;
+  }
 }

@@ -1,4 +1,5 @@
 .page-navigation {
+    padding-inline: .5rem;
     user-select: none;
     display: grid;
     z-index: 1000;
@@ -9,9 +10,31 @@
 
 .page-navigation__navigation-list {
     justify-self: end;
+    align-items: center;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: 40rem;
     backdrop-filter: blur(10rem);
+    -webkit-backdrop-filter: blur(10rem);
+}
+
+@media screen and (max-width: 500px) {
+    .page-navigation__navigation-list {
+        justify-self: start;
+    }
+
+    .page-navigation {
+        padding-top: 1rem;
+        backdrop-filter: blur(10rem);
+        -webkit-backdrop-filter: blur(10rem);
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+    .page-navigation__navigation-list {
+        gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

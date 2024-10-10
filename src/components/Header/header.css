@@ -2,20 +2,21 @@
     position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-    min-height: 50rem;
+    min-height: 80svh;
     margin-bottom: 5rem;
     user-select: none;
+    overflow: hidden;
 }
 
 .header__title {
-    font-size: 15rem;
+    font-size: clamp(6rem, 21vw, 15rem);
     color: var(--color-black);
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .header__title--top {
+    align-self: center;
     grid-row: 1/2;
     grid-column: 1/-1;
     position: relative;
@@ -24,16 +25,18 @@
 .header__title--top::after {
     position: absolute;
     content: "";
-    width: 90%;
-    bottom: 3rem;
-    left: -4rem;
+    width: clamp(20rem, 95svw, 70rem);
+    height: clamp(2rem, 7svw, 7rem);
+    bottom: clamp(2rem, 7svw, 3rem);
+    left: -1rem;
     transform: skewX(20deg);
-    height: 5rem;
+
     z-index: -1;
     background: #fcd01d;
 }
 
 .header__title--bottom {
+    align-self: center;
     position: relative;
     grid-row: 2/3;
 }
@@ -41,13 +44,15 @@
 .header__title--bottom::after {
     position: absolute;
     content: "";
-    width: 110%;
-    bottom: 10.5rem;
+    width: clamp(14rem, 40svw, 32rem);
+    height: clamp(2rem, 7svw, 7rem);
+    bottom: clamp(2rem, 7svw, 3rem);
+
     left: -1rem;
-    height: 8px;
+
     transform: skewX(20deg);
     background: #fcd01d;
-    height: 5rem;
+
     z-index: -1;
 }
 
@@ -75,7 +80,6 @@
     z-index: 1;
     position: absolute;
     left: 2rem;
-
     width: 18.75rem;
     border-radius: 0 0 20% 20%;
 }
@@ -136,5 +140,34 @@
         border-radius: 40% 50% 53% 47% / 36% 46% 54% 54%;
         transform: rotatez(360deg);
 
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        place-items: center;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .header__title--bottom {
+        grid-column: 1/-1;
+        grid-row: 3/4;
+    }
+
+    .header__blob-container {
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        top: -10%;
+        margin-right: 24rem;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+}
+
+@media screen and (max-height: 753px) {
+    .header__title--bottom {
+        align-self: end;
+        margin-bottom: -2rem;
     }
 }

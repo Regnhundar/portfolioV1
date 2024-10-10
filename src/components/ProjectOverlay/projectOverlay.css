@@ -1,0 +1,27 @@
+.project-overlay {
+    display: none;
+}
+
+.project-overlay.open {
+
+    width: clamp(25rem, 100svw, var(--max-width));
+    max-height: 90svh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    background-color: rgba(20, 20, 20, 0.801);
+    cursor: pointer;
+    padding: 4rem 2rem;
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
+    /* border-radius: 10% 14% 7% 4% / 6% 6% 4% 5%; */
+}
+
+.project-overlay__image {
+    max-width: 100%;
+    max-height: 70svh;
+}

@@ -61,4 +61,27 @@
     justify-self: end;
 }
 
-@media screen and (max-width: 450px) {}
+.contact-form div {
+    grid-column: 1/-1;
+    justify-self: end;
+}
+
+.contact-form__feedback-message {
+    font-size: var(--text-size-m);
+    font-weight: 600;
+    align-self: center;
+}
+
+.contact-form__feedback-message--green {
+    color: green;
+}
+
+.contact-form__feedback-message--red {
+    color: red;
+}
+
+@media screen and (max-width: 370px) {
+    .site-section--contact div:last-of-type {
+        padding-inline: 1rem;
+    }
+}

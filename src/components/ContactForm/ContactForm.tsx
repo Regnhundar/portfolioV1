@@ -2,9 +2,12 @@ import "./contactForm.css";
 import React, { useState } from "react";
 import TextButton from "../TextButton/TextButton";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
+
 const serviceID = import.meta.env.VITE_SERVICE_ID;
 const userID = import.meta.env.VITE_USER_ID;
 const mailTemplate = import.meta.env.VITE_MAIL_TEMPLATE;
+const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 const ContactForm: React.FC = () => {
     const [name, setName] = useState("");
@@ -12,6 +15,7 @@ const ContactForm: React.FC = () => {
     const [message, setMessage] = useState("");
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -20,6 +24,7 @@ const ContactForm: React.FC = () => {
             name,
             email,
             message,
+            "g-recaptcha-response": recaptchaToken,
         };
 
         emailjs
@@ -30,6 +35,7 @@ const ContactForm: React.FC = () => {
                 setName("");
                 setEmail("");
                 setMessage("");
+                setRecaptchaToken(null);
             })
             .catch((err) => {
                 console.error("Failed to send email:", err);
@@ -78,9 +84,9 @@ const ContactForm: React.FC = () => {
                     maxLength={300}
                     required></textarea>
             </label>
-
-            {success && <p className="">Message sent successfully!</p>}
-            {error && <p>{error}</p>}
+            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} size="compact" />
+            {success && <p className="contact-form__feedback-message contact-form__feedback-message--green">Meddelandet skickat!</p>}
+            {error && <p className="contact-form__feedback-message contact-form__feedback-message--red">{error}</p>}
             <TextButton text="Skicka!" />
         </form>
     );

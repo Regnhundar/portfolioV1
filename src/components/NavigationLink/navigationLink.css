@@ -19,7 +19,6 @@
 }
 
 .navigation-link::after {
-
     content: "";
     position: absolute;
     left: 0;
@@ -69,8 +68,8 @@
     }
 }
 
-@media screen and (max-width: 332px) {
+@media screen and (max-width: 359px) {
     .navigation-link {
-        font-size: var(--text-size-l);
+        font-size: var(--text-size-xm);
     }
 }

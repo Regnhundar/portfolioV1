@@ -69,14 +69,15 @@
         margin-left: 0;
     }
 
-    .site-section__project-tag {
-        margin-block: 1rem;
-    }
-
     @media screen and (max-width: 650px) {
+        .site-section {
+            gap: 8rem 1rem;
+        }
+
         .site-section__inner-text-wrapper {
             display: block;
         }
     }
+
 
 }

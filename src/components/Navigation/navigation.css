@@ -23,15 +23,15 @@
 @media screen and (max-width: 500px) {
     .page-navigation__navigation-list {
         justify-self: start;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .page-navigation {
-        padding: 1rem .3rem 0 .3rem;
+        padding: .5rem .3rem .5rem .3rem;
         backdrop-filter: blur(10rem);
         -webkit-backdrop-filter: blur(10rem);
     }
-
-
 }
 
 @media screen and (max-width: 430px) {

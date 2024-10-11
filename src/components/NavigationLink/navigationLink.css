@@ -61,14 +61,14 @@
     --color: var(--color-orange);
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 440px) {
     .navigation-link {
         padding: .5rem .6rem;
         box-shadow: inset .5rem 0 0 0 var(--color);
     }
 }
 
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
     .navigation-link {
         font-size: var(--text-size-xm);
     }

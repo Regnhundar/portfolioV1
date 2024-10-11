@@ -14,7 +14,7 @@
 /* Länkar */
 .site-section--contact> :nth-child(2) {
     grid-column: 1/3;
-    grid-row: 2/5;
+    grid-row: 2/4;
     min-height: 0;
 }
 
@@ -61,6 +61,16 @@
 .site-section--contact> :nth-child(3) {
     grid-column: 3/5;
     grid-row: 1/5;
+}
+
+.site-section--contact .site-section__inkblots {
+    font-family: "inkblots";
+    font-size: 7rem;
+    position: absolute;
+    right: 2rem;
+    bottom: -3rem;
+    transform: rotateZ(7deg);
+    color: var(--color-yellow);
 }
 
 @media screen and (max-width: 850px) {

@@ -61,25 +61,22 @@
     justify-self: end;
 }
 
-.contact-form div {
-    grid-column: 1/-1;
-    justify-self: end;
-}
+
 
 .contact-form__feedback-message {
+    grid-column: 1/-1;
     font-size: var(--text-size-l);
     font-weight: 600;
-    align-self: center;
+    place-self: center;
+    animation: messageFade 6s forwards;
 }
 
 .contact-form__feedback-message--green {
     color: green;
-    animation: messageFade 6s forwards;
 }
 
 .contact-form__feedback-message--red {
     color: red;
-    animation: messageFade 6s forwards;
 }
 
 @keyframes messageFade {
@@ -93,11 +90,5 @@
 
     100% {
         opacity: 0;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .site-section--contact div:last-of-type {
-        padding-inline: 1rem;
     }
 }

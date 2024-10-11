@@ -85,9 +85,10 @@ const ContactForm: React.FC = () => {
                     maxLength={300}
                     required></textarea>
             </label>
-            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} />
+
             {success && <p className="contact-form__feedback-message contact-form__feedback-message--green">Meddelandet skickat!</p>}
             {error && <p className="contact-form__feedback-message contact-form__feedback-message--red">{error}</p>}
+            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} size={"compact"} />
             <TextButton text="Skicka!" />
         </form>
     );

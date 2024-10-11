@@ -7,8 +7,9 @@
 
 @font-face {
   font-family: "BrandonGrotesqueBold";
-  src: url("/assets/fonts/brandonGrotesqueBold.otf") format("opentype");
+  src: url("/assets/fonts/Brandon_bld.otf") format("opentype");
 }
+
 
 :root {
   --text-size-s: .85rem;

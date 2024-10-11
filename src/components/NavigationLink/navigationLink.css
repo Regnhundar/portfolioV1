@@ -4,7 +4,6 @@
     padding: 1rem 2rem;
     color: var(--color-purple);
     text-decoration: none;
-    perspective: 100px;
     display: inline-block;
     border: transparent;
     box-shadow: inset 1.5rem 0 0 0 var(--color);

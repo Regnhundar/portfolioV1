@@ -56,13 +56,6 @@
     border-radius: 2px;
 }
 
-.contact-form button {
-    grid-column: 2/3;
-    justify-self: end;
-}
-
-
-
 .contact-form__feedback-message {
     grid-column: 1/-1;
     font-size: var(--text-size-l);
@@ -77,6 +70,16 @@
 
 .contact-form__feedback-message--red {
     color: red;
+}
+
+.contact-form button {
+    grid-column: 2/3;
+    justify-self: end;
+}
+
+.contact-form div {
+    grid-column: 1/-1;
+    justify-self: end;
 }
 
 @keyframes messageFade {

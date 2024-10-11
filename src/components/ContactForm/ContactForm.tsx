@@ -40,7 +40,6 @@ const ContactForm: React.FC = () => {
             })
             .catch((err) => {
                 console.error("Failed to send email:", err);
-                setError("");
                 setError("Något gick fel. Bockade du i reCaptcha?");
             });
     };

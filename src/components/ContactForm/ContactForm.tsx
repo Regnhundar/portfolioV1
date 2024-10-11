@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
 
             {success && <p className="contact-form__feedback-message contact-form__feedback-message--green">Meddelandet skickat!</p>}
             {error && <p className="contact-form__feedback-message contact-form__feedback-message--red">{error}</p>}
-            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} size={"compact"} />
+            <ReCAPTCHA sitekey={siteKey} onChange={setRecaptchaToken} />
             <TextButton text="Skicka!" />
         </form>
     );

@@ -5,7 +5,7 @@
     width: 100%;
     gap: 10rem;
     margin-top: 12rem;
-    padding-inline: .5rem;
+    padding-inline: 1rem;
 }
 
 .site-section {
@@ -34,6 +34,7 @@
 
 .site-section__inner-text-wrapper {
     display: grid;
+    gap: .5rem;
 }
 
 .site-section__project-tag {
@@ -74,9 +75,14 @@
             gap: 8rem 1rem;
         }
 
-        .site-section__inner-text-wrapper {
-            display: block;
+
+    }
+
+    @media screen and (max-width: 500px) {
+        .main {
+            padding-inline: .5rem;
         }
+
     }
 
 

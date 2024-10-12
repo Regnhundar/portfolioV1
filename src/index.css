@@ -17,7 +17,7 @@
   --text-size-l: 1.3rem;
   --text-size-xm: 1.6rem;
   --text-size-xl: 1.8rem;
-  --text-size-xxl: 2.4rem;
+  --text-size-xxl: 2.6rem;
   --text-size-xxxl: 3rem;
 
   --text-font--title: 'BrandonGrotesqueBlack', sans-serif;
@@ -119,23 +119,20 @@ img {
 }
 
 @media screen and (max-width: 1500px) {
+
   html {
     font-size: 12px;
   }
 
   :root {
+
     --max-width: 1000px;
   }
 }
 
 @media screen and (max-width: 500px) {
   :root {
+    --text-size-l: 1.4rem;
     --text-font--title: 'BrandonGrotesqueBold', sans-serif;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .wrapper {
-    max-width: 100%;
   }
 }

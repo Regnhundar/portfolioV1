@@ -8,7 +8,7 @@ const Header: React.FC = () => {
                 <img
                     className="header__image"
                     src="assets/images/illustrations/artist.svg"
-                    alt="Man with a moustache holding the colors the page is built with."
+                    alt="Man with a moustache holding a palette with the colors that the page is built with."
                 />
             </figure>
         </header>

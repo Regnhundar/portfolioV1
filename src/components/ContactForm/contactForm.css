@@ -21,7 +21,7 @@
 .contact-form__wordcount {
     user-select: none;
     position: absolute;
-    bottom: .5rem;
+    bottom: 1rem;
     right: 1rem;
     color: rgba(0, 0, 0, 0.55);
     font-family: var(--text-font--bread);

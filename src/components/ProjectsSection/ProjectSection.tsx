@@ -31,7 +31,8 @@ const ProjectSection: React.FC = () => {
                 <CardWrapper html="article" modifier="projects" size="big">
                     <h2 className="site-section__title">Projekt:</h2>
                     <p className="site-section__bread">
-                        Jag har alltid minst ett projekt på gång. Just nu fördjupar jag mig i TypeScript genom att bygga ett mobilspel.
+                        Här hittar du några saker jag har eller håller på att bygga. Jag har alltid minst ett projekt på gång. Just nu fördjupar jag
+                        mig i TypeScript genom att bygga ett mobilspel.
                     </p>
                 </CardWrapper>
 

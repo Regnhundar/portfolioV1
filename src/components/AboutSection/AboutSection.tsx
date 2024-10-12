@@ -9,13 +9,10 @@ const AboutSection: React.FC = () => {
                 <article className="site-section__inner-text-wrapper">
                     <h1 className="site-section__title">Om mig:</h1>
 
+                    <p className="site-section__bread">Hej!</p>
                     <p className="site-section__bread">
-                        Hej!
-                        <br />
                         Magnus heter jag och jag är en blivande utvecklare. Läser nu andra året på folkuniversitetets program för frontendutvecklare.
-                    </p>
-                    <p className="site-section__bread">
-                        Älskar att lösa problem både på frontend och backend. Målet är så klart att bli en kompetent fullstackutvecklare!
+                        Älskar att lösa problem både på frontend och backend. Målet är att bli en kompetent fullstackutvecklare!
                     </p>
                     <p className="site-section__bread">Utöver kod älskar jag att nörda ned mig i musik, litteratur, spel och engelsk fotboll.</p>
                 </article>
@@ -37,7 +34,7 @@ const AboutSection: React.FC = () => {
                     <p className="site-section__bread">
                         Tidigare arbetat med fysiska arbeten men vill få utlopp för min kreativa sida och sadlar nu om.
                     </p>
-                    <p className="site-section__bread">Söker nu en praktikplats för vecka 2-10 2025.</p>
+                    <p className="site-section__bread">Söker praktikplats för vecka 2-10 2025.</p>
                     <p className="site-section__bread">Kanske hos er?</p>
                 </div>
             </CardWrapper>

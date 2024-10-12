@@ -21,6 +21,7 @@
 
 .site-section__project-image:hover {
     cursor: pointer;
+
 }
 
 .site-section__project-bread {
@@ -51,9 +52,6 @@
 
 }
 
-.card-wrapper--projects .text-button {
-    align-self: end;
-}
 
 /* WhereItsAt */
 .site-section--projects> :nth-child(3) {
@@ -88,6 +86,10 @@
     min-height: 16.3rem;
     display: block;
     font-size: var(--text-size-l);
+}
+
+.site-section__text-wrapper * {
+    margin-block: .3rem;
 }
 
 @media screen and (max-width: 900px) {

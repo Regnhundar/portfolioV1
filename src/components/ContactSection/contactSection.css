@@ -32,16 +32,7 @@
     transition: all ease-in-out .2s;
 }
 
-.site-section__social-list-item:hover {
-    transform: translateY(-5px);
-    font-weight: 600;
-    color: #333;
 
-}
-
-.site-section__social-list-item:hover .site-section__social-icon path {
-    fill: #333;
-}
 
 .site-section__social-link {
     display: grid;
@@ -63,15 +54,18 @@
     grid-row: 1/5;
 }
 
-.site-section--contact .site-section__inkblots {
-    font-family: "inkblots";
-    font-size: 7rem;
-    position: absolute;
-    right: 2rem;
-    bottom: -3rem;
-    transform: rotateZ(7deg);
-    color: var(--color-yellow);
+@media (hover: hover) and (pointer: fine) {
+    .site-section__social-list-item:hover {
+        transform: translateY(-5px);
+        font-weight: 600;
+        color: #333;
+    }
+
+    .site-section__social-list-item:hover .site-section__social-icon path:first-of-type {
+        fill: #333;
+    }
 }
+
 
 @media screen and (max-width: 850px) {
 

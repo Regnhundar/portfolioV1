@@ -62,6 +62,8 @@
   background: var(--color-yellow);
 }
 
+
+
 body {
   background-image: var(--background-gradient);
   min-height: 100svh;

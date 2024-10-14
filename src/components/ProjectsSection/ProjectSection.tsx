@@ -1,7 +1,9 @@
 import CardWrapper from "../CardWrapper/CardWrapper";
 import ProjectOverlay from "../ProjectOverlay/ProjectOverlay";
 import TextButton from "../TextButton/TextButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import anime from "animejs";
 import "./projectSection.css";
 
 const ProjectSection: React.FC = () => {
@@ -23,12 +25,108 @@ const ProjectSection: React.FC = () => {
         setSrc(src);
         setAlt(alt);
     };
+    const { ref: sectionRef, inView } = useInView({
+        threshold: 0,
+    });
+    const { ref: shuiRef, inView: shuiInView } = useInView({
+        threshold: 0.2,
+    });
+    const { ref: whereItsAtRef, inView: whereItsAtInView } = useInView({
+        threshold: 0.2,
+    });
+
+    const { ref: recollRef, inView: recollInView } = useInView({
+        threshold: 0.2,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            anime({
+                targets: "#project",
+                translateY: 0,
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        } else {
+            anime({
+                targets: "#project",
+                translateY: "20%",
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        }
+    }, [inView]);
+
+    useEffect(() => {
+        if (shuiInView) {
+            anime({
+                targets: "#shui",
+                translateX: ["-20%", 0],
+                opacity: [0, 1],
+                duration: 800,
+
+                easing: "easeOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#shui",
+                translateX: [0, "-20%"],
+                opacity: [1, 0],
+                duration: 500,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [shuiInView]);
+    useEffect(() => {
+        if (whereItsAtInView) {
+            anime({
+                targets: "#whereItsAt",
+                translateX: ["-50%", 0],
+                opacity: [0, 1],
+                duration: 1000,
+
+                easing: "easeOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#whereItsAt",
+                translateX: [0, "-50%"],
+                opacity: [1, 0],
+                duration: 1000,
+
+                easing: "easeOutElastic",
+            });
+        }
+    }, [whereItsAtInView]);
+
+    useEffect(() => {
+        if (recollInView) {
+            anime({
+                targets: "#recollAction",
+                translateX: ["50%", 0],
+                opacity: [0, 1],
+                duration: 500,
+                easing: "easeOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#recollAction",
+                translateX: [0, "50%"],
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [recollInView]);
 
     return (
         <>
+            {" "}
             <ProjectOverlay isOverlayOpen={isOverlayOpen} setIsOverlayOpen={setIsOverlayOpen} alt={alt} src={src} />
-            <section className="site-section site-section--projects" id="projects" onClick={() => setIsOverlayOpen(false)}>
-                <CardWrapper html="article" modifier="projects" size="big">
+            <section className="site-section site-section--projects" id="projects" onClick={() => setIsOverlayOpen(false)} ref={sectionRef}>
+                <CardWrapper html="article" modifier="projects" size="big" id="project">
                     <h2 className="site-section__title">Projekt:</h2>
                     <p className="site-section__bread">
                         Här hittar du några saker jag har eller håller på att bygga. Jag har alltid minst ett projekt på gång. Just nu fördjupar jag
@@ -37,7 +135,7 @@ const ProjectSection: React.FC = () => {
                 </CardWrapper>
 
                 {/* Shui */}
-                <CardWrapper html="article" modifier="projects" id={`${!isFlippedState["Shui"] ? "" : "none"}`} size="medium">
+                <CardWrapper html="article" modifier={`${!isFlippedState["Shui"] ? "projects" : "none"}`} id="shui" size="medium" ref={shuiRef}>
                     <h2 className="site-section__title site-section__title--subtitle site-section__title--margin">Shui</h2>
                     {!isFlippedState["Shui"] ? (
                         <div className="card-wrapper--inner">
@@ -67,7 +165,12 @@ const ProjectSection: React.FC = () => {
                 </CardWrapper>
 
                 {/* WhereItsAt */}
-                <CardWrapper html="article" modifier="projects" id={`${!isFlippedState["WhereItsAt"] ? "" : "none"}`} size="medium">
+                <CardWrapper
+                    html="article"
+                    modifier={`${!isFlippedState["WhereItsAt"] ? "projects" : "none"}`}
+                    id="whereItsAt"
+                    size="medium"
+                    ref={whereItsAtRef}>
                     <h2 className="site-section__title site-section__title--subtitle site-section__title--margin">WhereItsAt</h2>
                     {!isFlippedState["WhereItsAt"] ? (
                         <div className="card-wrapper--inner">
@@ -95,7 +198,12 @@ const ProjectSection: React.FC = () => {
                 </CardWrapper>
 
                 {/* RecollAction */}
-                <CardWrapper html="article" modifier="projects" id={`${!isFlippedState["RecollAction"] ? "" : "none"}`} size="medium">
+                <CardWrapper
+                    html="article"
+                    modifier={`${!isFlippedState["RecollAction"] ? "projects" : "none"}`}
+                    size="medium"
+                    id="recollAction"
+                    ref={recollRef}>
                     <h2 className="site-section__title site-section__title--subtitle site-section__title--margin">RecollAction</h2>
                     {!isFlippedState["RecollAction"] ? (
                         <div className="card-wrapper--inner">

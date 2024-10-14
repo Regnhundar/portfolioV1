@@ -52,7 +52,8 @@
     background: var(--color-orange);
 }
 
-.card-wrapper--projects {
+.card-wrapper--projects,
+.card-wrapper--none {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
@@ -129,10 +130,13 @@
     background: var(--color-purple);
 }
 
-#none::after {
+.card-wrapper--none::after,
+.card-wrapper--none:first-of-type::after,
+.card-wrapper--none:nth-of-type(4)::after,
+.card-wrapper--none:nth-of-type(3)::after,
+.card-wrapper--none:nth-of-type(2)::after {
     opacity: 0;
 }
-
 
 
 .card-wrapper--contact::after {

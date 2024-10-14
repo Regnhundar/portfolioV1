@@ -5,14 +5,16 @@
     width: 100%;
     gap: 10rem;
     margin-top: 12rem;
-    padding-inline: 1rem;
 }
 
 .site-section {
     padding-top: 5rem;
+    padding-inline: 1rem;
+    max-width: 100svw;
     grid-column: 1/-1;
     gap: 4rem;
     display: grid;
+    overflow: hidden;
 }
 
 
@@ -79,7 +81,7 @@
     }
 
     @media screen and (max-width: 500px) {
-        .main {
+        .site-section {
             padding-inline: .5rem;
         }
 

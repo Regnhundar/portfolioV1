@@ -1,11 +1,93 @@
 import CardWrapper from "../CardWrapper/CardWrapper";
 import TechStackDisplay from "../TechStackDisplay/TechStackDisplay";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import anime from "animejs";
 import "./aboutSection.css";
 
 const AboutSection: React.FC = () => {
+    const { ref: sectionRef, inView } = useInView({
+        threshold: 0,
+    });
+    const { ref: skillsRef, inView: skillsInView } = useInView({
+        threshold: 0.2,
+    });
+
+    const { ref: experienceRef, inView: experienceInView } = useInView({
+        threshold: 0.2,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            anime({
+                targets: "#aboutMe",
+                translateY: 0,
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        } else {
+            anime({
+                targets: "#aboutMe",
+                translateY: "20%",
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        }
+    }, [inView]);
+
+    useEffect(() => {
+        if (skillsInView) {
+            anime({
+                targets: "#skills",
+                translateX: ["-20%", 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+            anime({
+                targets: ".site-section__skills-list-item",
+                scale: ["1", "4", "1"],
+
+                delay: anime.stagger(150),
+                duration: 500,
+                easing: "easeInOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#skills",
+                translateX: [0, "-20%"],
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [skillsInView]);
+
+    useEffect(() => {
+        if (experienceInView) {
+            anime({
+                targets: "#experience",
+                translateX: ["20%", 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#experience",
+                translateX: [0, "20%"],
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [experienceInView]);
+
     return (
-        <section className="site-section site-section--about" id="about">
-            <CardWrapper html="div" modifier="about">
+        <section className="site-section site-section--about" id="about" ref={sectionRef}>
+            <CardWrapper html="div" modifier="about" id="aboutMe">
                 <article className="site-section__inner-text-wrapper">
                     <h1 className="site-section__title">Om mig:</h1>
 
@@ -19,7 +101,7 @@ const AboutSection: React.FC = () => {
                 <img className="site-section__image" src="assets/images/photos/me-sketched.png" alt="A black and white photo of me." />
             </CardWrapper>
 
-            <CardWrapper html="article" modifier="about">
+            <CardWrapper html="article" modifier="about" ref={skillsRef} id="skills">
                 <h2 className="site-section__title site-section__title--subtitle">Kunskaper:</h2>
                 <div className="site-section__inner-text-wrapper">
                     <p className="site-section__bread">
@@ -28,7 +110,7 @@ const AboutSection: React.FC = () => {
                     <TechStackDisplay />
                 </div>
             </CardWrapper>
-            <CardWrapper html="article" modifier="about">
+            <CardWrapper html="article" modifier="about" ref={experienceRef} id="experience">
                 <h2 className="site-section__title site-section__title--subtitle">Erfarenheter:</h2>
                 <div className="site-section__inner-text-wrapper">
                     <p className="site-section__bread">

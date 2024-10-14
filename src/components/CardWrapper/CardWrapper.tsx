@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, forwardRef } from "react";
 import "./cardWrapper.css";
 
 interface Props {
@@ -8,13 +8,13 @@ interface Props {
     children: ReactNode;
     id?: string;
 }
-const CardWrapper: React.FC<Props> = ({ html = "div", children, modifier, size = "big", id }) => {
+const CardWrapper = forwardRef<HTMLElement, Props>(({ html = "div", children, modifier, size = "big", id }, ref) => {
     return React.createElement(
         html,
-        { className: `card-wrapper ${modifier ? `card-wrapper--${modifier}` : ""} ${size ? `card-wrapper--${size}` : ""}`, id: id },
+        { ref, className: `card-wrapper ${modifier ? `card-wrapper--${modifier}` : ""} ${size ? `card-wrapper--${size}` : ""}`, id: id },
 
         children
     );
-};
-
+});
+CardWrapper.displayName = "CardWrapper";
 export default CardWrapper;

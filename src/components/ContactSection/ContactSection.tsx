@@ -1,10 +1,92 @@
 import CardWrapper from "../CardWrapper/CardWrapper";
 import ContactForm from "../ContactForm/ContactForm";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import anime from "animejs";
 import "./contactSection.css";
+
 const ContactSection: React.FC = () => {
+    const { ref: sectionRef, inView } = useInView({
+        threshold: 0,
+    });
+    const { ref: linksRef, inView: linksInView } = useInView({
+        threshold: 0.2,
+    });
+
+    const { ref: contactFormRef, inView: contactFormInView } = useInView({
+        threshold: 0.2,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            anime({
+                targets: "#contactArticle",
+                translateY: 0,
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        } else {
+            anime({
+                targets: "#contactArticle",
+                translateY: "20%",
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeInOutQuad",
+            });
+        }
+    }, [inView]);
+
+    useEffect(() => {
+        if (linksInView) {
+            anime({
+                targets: "#links",
+                translateX: ["-50%", 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+            anime({
+                targets: ".site-section__social-list-item",
+                scale: [0, "400%", "100%"],
+                opacity: [0, 1, 1],
+                delay: anime.stagger(150),
+                duration: 500,
+                easing: "easeInOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#links",
+                translateX: [0, "-50%"],
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [linksInView]);
+
+    useEffect(() => {
+        if (contactFormInView) {
+            anime({
+                targets: "#contactForm",
+                translateX: ["50%", 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        } else {
+            anime({
+                targets: "#contactForm",
+                translateX: [0, "50%"],
+                opacity: [1, 0],
+                duration: 800,
+                easing: "easeOutElastic",
+            });
+        }
+    }, [contactFormInView]);
     return (
-        <section className="site-section site-section--contact" id="contact">
-            <CardWrapper html="article" modifier="contact">
+        <section className="site-section site-section--contact" id="contact" ref={sectionRef}>
+            <CardWrapper html="article" modifier="contact" id="contactArticle">
                 <h2 className="site-section__title">Kontakta:</h2>
                 <div className="site-section__inner-text-wrapper">
                     <p className="site-section__bread">Kul att du vill komma i kontakt!</p>
@@ -13,7 +95,7 @@ const ContactSection: React.FC = () => {
                     </p>
                 </div>
             </CardWrapper>
-            <CardWrapper html="article" modifier="contact">
+            <CardWrapper html="article" modifier="contact" id="links" ref={linksRef}>
                 <h2 className="site-section__title site-section__title--subtitle">Länkar:</h2>
                 <nav className="site-section__navigation">
                     <ul className="site-section__social-list">
@@ -25,8 +107,8 @@ const ContactSection: React.FC = () => {
                                         fill="#444444"
                                     />
                                     <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
                                         d="M6.85908 5.36629C7.11908 5.09829 7.26208 4.74029 7.25908 4.36829C7.24565 4.00721 7.09479 3.6649 6.83735 3.41136C6.5799 3.15782 6.23533 3.0122 5.87408 3.00429C5.51189 3.01252 5.16633 3.15792 4.9072 3.41111C4.64808 3.66429 4.49471 4.00639 4.47808 4.36829C4.48346 4.73986 4.6313 5.09519 4.89107 5.36091C5.15085 5.62664 5.50273 5.78249 5.87408 5.79629C6.24607 5.78755 6.59977 5.63314 6.85908 5.36629ZM5.61608 7.63429C5.02908 7.62129 4.62908 7.61229 4.62908 8.33029V16.3223C4.62908 17.0253 5.01108 17.0113 5.56108 16.9903C5.66108 16.9856 5.76575 16.983 5.87508 16.9823C5.98508 16.983 6.08975 16.9856 6.18908 16.9903C6.73708 17.0103 7.11108 17.0253 7.11108 16.3223V8.33129C7.11108 7.61329 6.71908 7.62129 6.13508 7.63529C5.9621 7.63937 5.78906 7.63837 5.61608 7.63429ZM9.70008 7.64929C9.43408 7.70229 9.26308 7.87229 9.26308 8.33029V16.3223C9.26308 17.0253 9.63008 17.0113 10.1811 16.9903C10.2811 16.9856 10.3871 16.983 10.4991 16.9823C10.6111 16.983 10.7174 16.9856 10.8181 16.9903C11.3721 17.0103 11.7461 17.0253 11.7461 16.3223V12.0603C11.7248 11.8424 11.75 11.6225 11.8201 11.4152C11.8901 11.2078 12.0035 11.0177 12.1526 10.8574C12.3017 10.6971 12.4832 10.5704 12.6849 10.4855C12.8867 10.4007 13.1043 10.3597 13.3231 10.3653C13.543 10.3521 13.7631 10.3865 13.9685 10.466C14.174 10.5455 14.3599 10.6684 14.5136 10.8261C14.6673 10.9839 14.7852 11.173 14.8593 11.3804C14.9334 11.5879 14.962 11.8088 14.9431 12.0283V16.2893C14.9431 16.9933 15.3091 16.9793 15.8601 16.9583C15.9601 16.9536 16.0661 16.951 16.1781 16.9503C16.2901 16.951 16.3964 16.9536 16.4971 16.9583C17.0481 16.9783 17.4141 16.9933 17.4141 16.2903V10.8343C17.4346 10.3863 17.3606 9.9391 17.1968 9.52165C17.0331 9.10419 16.7833 8.72588 16.4637 8.41131C16.1442 8.09674 15.762 7.85296 15.342 7.69583C14.922 7.5387 14.4736 7.47174 14.0261 7.49929C13.5702 7.45743 13.1112 7.53349 12.6932 7.72017C12.2752 7.90685 11.9122 8.19787 11.6391 8.56529C11.6501 8.17129 11.5221 7.64929 11.2031 7.64929C11.1111 7.64929 10.9701 7.64429 10.8101 7.63929C10.4101 7.62729 9.89008 7.61129 9.70008 7.64929Z"
                                         fill="white"
                                     />
@@ -67,7 +149,7 @@ const ContactSection: React.FC = () => {
                     </ul>
                 </nav>
             </CardWrapper>
-            <CardWrapper html="div" modifier="contact">
+            <CardWrapper html="div" modifier="contact" id="contactForm" ref={contactFormRef}>
                 <ContactForm />
             </CardWrapper>
         </section>

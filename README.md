@@ -7,7 +7,7 @@
 
 <br>
 
-**Det är kul med färg! Animationer soon!**
+**Det är kul med färg!**
 
 <br>
 

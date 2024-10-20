@@ -232,7 +232,7 @@ const ProjectSection: React.FC = () => {
                                 Frontend byggd i React+vite med TypeScript och i nuläget har den ingen backend men planen är att implementera
                                 möjlighet att spela via websocket.
                             </p>
-                            <p className="site-section__read-more-bread">Antingen kommer jag implementera en PWS eller skriva om i React Native.</p>
+                            <p className="site-section__read-more-bread">Antingen kommer jag implementera en PWA eller skriva om i React Native.</p>
                             <p className="site-section__read-more-bread">
                                 Än så länge väldigt tidigt i utvecklingen med placeholder grafik och extremt rudimentär funktionalitet.
                             </p>

@@ -120,12 +120,14 @@
 }
 
 
-.card-wrapper--projects ::selection {
+.card-wrapper--projects ::selection,
+.card-wrapper--none ::selection {
     color: white;
     background: var(--color-purple);
 }
 
-.card-wrapper--projects ::-moz-selection {
+.card-wrapper--projects ::-moz-selection,
+.card-wrapper--none ::-moz-selection {
     color: white;
     background: var(--color-purple);
 }
